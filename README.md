@@ -8,7 +8,6 @@ Welcome to the URL Shortener Project! This project allows you to shorten long UR
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [Contributing](#contributing)
-6. [License](#license)
 
 ## Getting Started
 
