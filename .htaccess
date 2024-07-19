@@ -1,0 +1,38 @@
+# Disable server signature
+ServerSignature Off
+
+# Disable ETag headers
+Header unset ETag
+FileETag None
+
+# Security Headers
+Header unset X-Powered-By
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "DENY"
+Header set X-XSS-Protection "1; mode=block"
+Header always unset server
+<IfModule mod_headers.c>
+    Header unset Server
+</IfModule>
+
+# Disable directory listing
+Options -Indexes
+
+# 480 weeks
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+    Header set Cache-Control "max-age=290304000, public"
+</FilesMatch>
+
+# 2 DAYS
+<FilesMatch "\.(xml|txt)$">
+    Header set Cache-Control "max-age=172800, public, must-revalidate"
+</FilesMatch>
+
+# Prevent direct access to .htaccess file
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</Files>
+

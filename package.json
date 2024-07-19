@@ -1,0 +1,11 @@
+{
+  "name": "short.url",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "tailwindcss": "^3.4.4",
+  },
+  "scripts": {
+    "start": "npx tailwindcss -i assets/app.css -o assets/tailwind-styles.css --minify --watch"
+  }
+}
+

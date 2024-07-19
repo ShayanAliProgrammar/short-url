@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.input-bordered {
+		@apply px-5 py-2.5 bg-white border outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 ring-offset-primary-light rounded-3xl;
+	}
+
+	.btn-primary {
+		@apply !text-white disabled:pointer-events-none disabled:opacity-70;
+		@apply transition-all duration-200 hover:text-white bg-primary hover:bg-primary-hovered;
+		@apply focus:outline-none focus-within:ring-2 focus-within:ring-offset-2 ring-offset-white focus-within:ring-primary;
+		@apply font-medium rounded-full text-sm px-6 py-3 text-center text-nowrap;
+	}
+
+	.btn-link {
+		@apply focus-within:bg-primary-light disabled:opacity-70 disabled:pointer-events-none text-primary;
+		@apply transition-all duration-200 hover:bg-primary-light text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-white focus:ring-primary-hovered;
+		@apply font-medium rounded-full px-1.5 py-0.5 text-nowrap;
+	}
+
+}
